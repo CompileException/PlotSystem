@@ -38,7 +38,7 @@ public class CMD_PReload implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
-        if (sender.hasPermission("alpsbte.admin")){
+        if (sender.hasPermission("btegermany.admin")){
             try {
                 BTEPlotSystem.getPlugin().saveConfig();
                 BTEPlotSystem.getPlugin().reloadConfig();

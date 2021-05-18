@@ -40,14 +40,14 @@ import java.util.logging.Level;
 public class CMD_UndoReview implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
-        if(sender.hasPermission("alpsbte.review")) {
+        if(sender.hasPermission("btegermany.review")) {
             if(args.length == 1 && Utils.TryParseInt(args[0]) != null) {
                 try {
                     int plotID = Integer.parseInt(args[0]);
                     if(PlotManager.plotExists(plotID)) {
                         Plot plot = new Plot(plotID);
                         if(plot.isReviewed() && !plot.isRejected()) {
-                            if(plot.getReview().getReviewer().getUUID().equals(((Player)sender).getUniqueId()) || sender.hasPermission("alpsbte.admin")) {
+                            if(plot.getReview().getReviewer().getUUID().equals(((Player)sender).getUniqueId()) || sender.hasPermission("btegermany.admin")) {
                                 Review.undoReview(plot.getReview());
                                 sender.sendMessage((Utils.getInfoMessageFormat("Plot §6#" + plot.getID() + " §aby §6" + plot.getBuilder().getName() + " §ahas been unreviewed!")));
                             } else {

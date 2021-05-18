@@ -43,7 +43,7 @@ public class CMD_UndoSubmit implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 Player player = (Player) sender;
                 World playerWorld = player.getWorld();
 
@@ -73,7 +73,7 @@ public class CMD_UndoSubmit implements CommandExecutor {
 
                 try {
                     if(plot.getStatus() == Status.unreviewed) {
-                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("alpsbte.admin")) {
+                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("btegermany.admin")) {
                             PlotHandler.undoSubmit(plot);
 
                             player.sendMessage(Utils.getInfoMessageFormat("Undid submission of plot with the ID §6#" + plot.getID()));

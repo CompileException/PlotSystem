@@ -41,14 +41,14 @@ public class CMD_SendFeedback implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (sender instanceof Player){
             Player player = (Player)sender;
-            if (player.hasPermission("alpsbte.review")){
+            if (player.hasPermission("btegermany.review")){
                 if (args.length >= 2){
                     if (Utils.TryParseInt(args[0]) != null){
                         try {
                             if(PlotManager.plotExists(Integer.parseInt(args[0]))) {
                                 Plot plot = new Plot(Integer.parseInt(args[0]));
                                 if (plot.isReviewed() || plot.isRejected()) {
-                                    if (plot.getReview().getReviewer().getUUID().equals(player.getUniqueId()) || player.hasPermission("alpsbte.admin")){
+                                    if (plot.getReview().getReviewer().getUUID().equals(player.getUniqueId()) || player.hasPermission("btegermany.admin")){
 
                                         StringBuilder feedback = new StringBuilder();
 

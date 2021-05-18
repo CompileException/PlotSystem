@@ -182,7 +182,7 @@
         <!-- IMPORTANT: Plugin Building Path -->
         <sourceDirectory>src/main/java/io</sourceDirectory>
         <!-- IMPORTANT: Output File Name -->
-        <finalName>AlpsBTE-PlotSystem V${project.version}</finalName>
+        <finalName>BTEGermany-PlotSystem V${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

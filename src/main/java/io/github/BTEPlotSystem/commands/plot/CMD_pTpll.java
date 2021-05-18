@@ -19,11 +19,11 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
 
-public class CMD_Tpll implements CommandExecutor {
+public class CMD_pTpll implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if (sender.hasPermission("alpsbte.plot")) {
+            if (sender.hasPermission("btegermany.plot")) {
                 Player player = (Player) sender;
                 World playerWorld = player.getWorld();
 
@@ -41,7 +41,7 @@ public class CMD_Tpll implements CommandExecutor {
                             args[1] = args[1].substring(0, args[1].length() - 1);
                         }
                         if (args.length != 2 && args.length != 3) {
-                            player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/tpll <lat> <lon>"));
+                            player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/ptpll <lat> <lon>"));
                             return true;
                         }
 
@@ -53,7 +53,7 @@ public class CMD_Tpll implements CommandExecutor {
                                 lat = Double.parseDouble(args[0]);
                                 lon = Double.parseDouble(args[1]);
                             } catch (Exception ignore) {
-                                player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/tpll <lat> <lon>"));
+                                player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/ptpll <lat> <lon>"));
                                 return true;
                             }
 
@@ -99,10 +99,10 @@ public class CMD_Tpll implements CommandExecutor {
                             player.sendMessage(Utils.getErrorMessageFormat("A unknown error occurred! Please try again!"));
                         }
                     } catch (Exception ignore) {
-                        player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/tpll <lat> <lon>"));
+                        player.sendMessage(Utils.getErrorMessageFormat("§lUsage: §c/ptpll <lat> <lon>"));
                     }
                 } else {
-                    player.sendMessage(Utils.getErrorMessageFormat("You can only use /tpll on a plot!"));
+                    player.sendMessage(Utils.getErrorMessageFormat("You can only use /ptpll on a plot!"));
                 }
             }
         }

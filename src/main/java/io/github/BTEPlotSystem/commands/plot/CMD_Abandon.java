@@ -43,7 +43,7 @@ public class CMD_Abandon implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 Player player = (Player) sender;
                 World playerWorld = player.getWorld();
 
@@ -73,7 +73,7 @@ public class CMD_Abandon implements CommandExecutor {
 
                 try {
                     if(plot.getStatus() == Status.unfinished) {
-                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("alpsbte.review")) {
+                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("btegermany.review")) {
                             PlotHandler.abandonPlot(plot);
 
                             player.sendMessage(Utils.getInfoMessageFormat("Abandoned plot with the ID §6#" + plot.getID()));

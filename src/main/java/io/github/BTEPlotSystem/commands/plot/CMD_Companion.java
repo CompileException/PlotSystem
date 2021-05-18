@@ -38,7 +38,7 @@ public class CMD_Companion implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (sender instanceof Player){
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 new CompanionMenu((Player) sender);
             }
         }

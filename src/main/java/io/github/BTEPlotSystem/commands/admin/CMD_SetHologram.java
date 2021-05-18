@@ -38,7 +38,7 @@ public class CMD_SetHologram implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (sender instanceof Player){
             Player player = (Player)sender;
-            if (sender.hasPermission("alpsbte.admin")){
+            if (sender.hasPermission("btegermany.admin")){
                 if (args.length == 1) {
                     if(BTEPlotSystem.getHolograms().stream().anyMatch(holo -> holo.getHologramName().equalsIgnoreCase(args[0]))) {
                         HolographicDisplay hologram = BTEPlotSystem.getHolograms().stream().filter(holo -> holo.getHologramName().equalsIgnoreCase(args[0])).findFirst().get();

@@ -40,7 +40,7 @@ public class CMD_Links implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (sender instanceof Player){
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 Player player = (Player)sender;
                 if (PlotManager.isPlotWorld(player.getWorld())){
                     try {

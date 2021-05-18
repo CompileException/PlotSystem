@@ -41,7 +41,7 @@ public class CMD_GeneratePlot implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.admin")) {
+            if(sender.hasPermission("btegermany.admin")) {
                 if(Utils.TryParseInt(args[0]) != null) {
                     try {
                         new PlotGenerator(new Plot(Integer.parseInt(args[0])), new Builder(((Player) sender).getUniqueId()));

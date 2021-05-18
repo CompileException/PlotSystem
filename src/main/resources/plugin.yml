@@ -1,8 +1,8 @@
 main: github.BTEPlotSystem.BTEPlotSystem
 version: 1.1.1
 api-version: 1.12.2
-name: AlpsBTE-PlotSystem
-author: R3tuxn & Cinnazeyy
+name: BTEGermany-PlotSystem
+author: R3tuxn & Cinnazeyy & FFA2016
 depend: [HeadDatabase, HolographicDisplays]
 
 commands:
@@ -17,75 +17,75 @@ commands:
     usage: /tpp <Player>
   companion:
     description: Open the Companion menu
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /companion
   link:
     description: Sends you the links of the plot you are currently on
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /link
   submit:
     description: Submit a unfinished plot
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /submit, /submit <ID>
   abandon:
     description: Abandon a unfinished plot
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /abandon, /abandon <ID>
   undosubmit:
     description: Undo a submission of a unreviewed plot
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /undosubmit, /undosubmit <ID>
   feedback:
     description: Shows all feedback information of a plot
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /feedback <ID>
   plots:
     description: Shows all plots of the given player
-    permission: alpsbte.plot
+    permission: btegermany.plot
     usage: /plots, /plots <Player>
   review:
     description: Open the review or review plot menu
-    permission: alpsbte.review
+    permission: btegermany.review
     usage: /review
   undoreview:
     description: Undo a review of a plot
-    permission: alpsbte.review
+    permission: btegermany.review
     usage: /undoreview <ID>
   sendfeedback:
     description: Sets the feedback of a plot
-    permission: alpsbte.review
+    permission: btegermany.review
     usage: /sendfeedback <ID> <Text>
   editplot:
     description: Enable/disble build permissions for reviewers on a plot
-    permission: alpsbte.review
+    permission: btegermany.review
     usage: /editplot
   plot:
     description: Teleport to a plot
-    permission: alpsbte.admin
+    permission: btegermany.admin
     usage: /plot <ID>
   cleanplot:
     description: Clean up plot data after a update/bug
-    permission: alpsbte.admin
+    permission: btegermany.admin
     usage: /cleanplot, /cleanplot <ID>
   deleteplot:
     description: Delete a plot
-    permission: alpsbte.admin
+    permission: btegermany.admin
     usage: /deleteplot <ID>
   generateplot:
     description: Generate a new plot
-    permission: alpsbte.admin
+    permission: btegermany.admin
     usage: /generateplot <ID>
   sethologram:
     description: Sets the position of a hologram
-    permission: alpsbte.admin
+    permission: btegermany.admin
     usage: /sethologram <name>
-  preload:
+  plotreload:
     description: Reload config and holograms
-    permission: alpsbte.admin
-    usage: /preload
-  tpll:
+    permission: btegermany.admin
+    usage: /plotreload
+  ptpll:
     description: teleport to a position in the plot, using irl coordinates
-    usage: /tpll <long> <lat>
+    usage: /ptpll <long> <lat>
 permissions:
-  alpsbte.admin:
+  btegermany.admin:
     description: Manager permissions

@@ -40,7 +40,7 @@ public class CMD_EditPlot implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.review") || sender.hasPermission("alpsbte.admin")) {
+            if(sender.hasPermission("btegermany.review") || sender.hasPermission("btegermany.admin")) {
                 Player player = (Player) sender;
                 if(args.length == 0) {
                     if(PlotManager.isPlotWorld(player.getWorld())) {

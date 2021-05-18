@@ -81,7 +81,7 @@ public class ReviewMenu implements Listener {
         ItemStack plotLoadError = new ItemBuilder(Material.BARRIER, 1)
                 .setName("§cCould not load plot")
                 .setLore(new LoreBuilder()
-                        .addLine("Please contact a Manager or Developer!").build())
+                        .addLine("Please contact a Admin or Developer!").build())
                 .build();
 
         List<Plot> plots = PlotManager.getPlots(Status.unreviewed);

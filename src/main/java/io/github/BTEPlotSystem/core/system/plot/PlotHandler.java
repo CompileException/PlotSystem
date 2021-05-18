@@ -64,7 +64,7 @@ public class PlotHandler {
 
         player.getInventory().setItem(8, CompanionMenu.getMenuItem());
 
-        if(player.hasPermission("alpsbte.review")) {
+        if(player.hasPermission("btegermany.review")) {
             player.getInventory().setItem(7, ReviewMenu.getMenuItem());
         } else if(player.getInventory().contains(ReviewMenu.getMenuItem())) {
             player.getInventory().remove(ReviewMenu.getMenuItem());
@@ -227,7 +227,7 @@ public class PlotHandler {
     }
 
     public static void sendUnreviewedPlotsReminderMessage(List<Plot> plots, Player player) {
-        if(plots.size() <= 1) {
+        if(plots.size() == 1) {
             player.sendMessage("§aThere is §6" + plots.size() + " §aunreviewed plot!");
         } else {
             player.sendMessage("§aThere are §6" + plots.size() + " §aunreviewed plots!");

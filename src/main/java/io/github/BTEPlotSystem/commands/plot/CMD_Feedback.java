@@ -41,7 +41,7 @@ public class CMD_Feedback implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 if(args.length == 1) {
                     if(Utils.TryParseInt(args[0]) != null) {
                         try {
@@ -49,7 +49,7 @@ public class CMD_Feedback implements CommandExecutor {
 
                             if(PlotManager.plotExists(plot.getID())) {
                                 if(plot.isReviewed() || plot.isRejected()) {
-                                    if(plot.getBuilder().getUUID().equals(((Player) sender).getUniqueId()) || sender.hasPermission("alpsbte.review")) {
+                                    if(plot.getBuilder().getUUID().equals(((Player) sender).getUniqueId()) || sender.hasPermission("btegermany.review")) {
                                         new FeedbackMenu((Player) sender, plot.getID());
                                     } else {
                                         sender.sendMessage(Utils.getErrorMessageFormat("You don't have permission to see this feedback!"));

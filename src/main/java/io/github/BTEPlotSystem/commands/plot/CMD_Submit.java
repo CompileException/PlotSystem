@@ -44,7 +44,7 @@ public class CMD_Submit implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.plot")) {
+            if(sender.hasPermission("btegermany.plot")) {
                 Player player = (Player) sender;
                 World playerWorld = player.getWorld();
 
@@ -74,7 +74,7 @@ public class CMD_Submit implements CommandExecutor {
 
                 try {
                     if(plot.getStatus() == Status.unfinished) {
-                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("alpsbte.review")) {
+                        if(plot.getBuilder().getUUID().equals(player.getUniqueId()) || player.hasPermission("btegermany.review")) {
                             PlotHandler.submitPlot(plot);
 
                             Bukkit.broadcastMessage(Utils.getInfoMessageFormat("Plot §6#" + plot.getID() + " §aby §6" + plot.getBuilder().getName() + " §ahas been finished!"));

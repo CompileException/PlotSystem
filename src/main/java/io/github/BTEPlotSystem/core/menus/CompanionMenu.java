@@ -24,6 +24,7 @@
 
 package github.BTEPlotSystem.core.menus;
 
+import github.BTEPlotSystem.BTEPlotSystem;
 import github.BTEPlotSystem.core.system.Builder;
 import github.BTEPlotSystem.core.system.CityProject;
 import github.BTEPlotSystem.core.system.plot.Plot;
@@ -61,7 +62,7 @@ public class CompanionMenu extends AbstractMenu {
                 .pattern("000000000")
                 .pattern("000000000")
                 .pattern("000000000")
-                .pattern("100010001")
+                .pattern("100010011")
                 .build();
         mask.apply(getMenu());
 
@@ -86,15 +87,15 @@ public class CompanionMenu extends AbstractMenu {
         // Set navigator item
         getMenu().getSlot(4)
                 .setItem(new ItemBuilder(Material.COMPASS, 1)
-                        .setName("§6§lNavigator").setLore(new LoreBuilder()
-                                .addLine("Open the navigator menu").build())
+                        .setName("§6§Lobby").setLore(new LoreBuilder()
+                                .addLine("Go to the lobby").build())
                         .build());
 
         // Set switch plots difficulty item
         try {
-            getMenu().getSlot(7).setItem(getSelectedDifficultyItem());
+            getMenu().getSlot(52).setItem(getSelectedDifficultyItem());
         } catch (SQLException ex) {
-            getMenu().getSlot(7).setItem(MenuItems.errorItem());
+            getMenu().getSlot(52).setItem(MenuItems.errorItem());
             Bukkit.getLogger().log(Level.SEVERE, "A SQL error occurred!", ex);
         }
 
@@ -135,12 +136,12 @@ public class CompanionMenu extends AbstractMenu {
         getMenu().getSlot(51).setItem(PlayerPlotsMenu.getMenuItem());
 
         // Set player settings item
-        getMenu().getSlot(52)
-                .setItem(new ItemBuilder(Material.REDSTONE_COMPARATOR)
-                        .setName("§b§lSettings")
-                        .setLore(new LoreBuilder()
-                                .addLine("Modify your user settings").build())
-                        .build());
+        //getMenu().getSlot(52)
+        //        .setItem(new ItemBuilder(Material.REDSTONE_COMPARATOR)
+        //                .setName("§b§lSettings")
+        //                .setLore(new LoreBuilder()
+        //                        .addLine("Modify your user settings").build())
+        //                .build());
     }
 
     @Override
@@ -148,16 +149,16 @@ public class CompanionMenu extends AbstractMenu {
         // Add click event for navigator item
         getMenu().getSlot(4).setClickHandler((clickPlayer, clickInformation) -> {
             clickPlayer.closeInventory();
-            clickPlayer.performCommand("navigator");
+            BTEPlotSystem.sendPlayerToServer(clickPlayer, "Lobby");
         });
 
         // Add click event for switch plots difficulty item
-        getMenu().getSlot(7).setClickHandler((clickPlayer, clickInformation) -> {
+        getMenu().getSlot(52).setClickHandler((clickPlayer, clickInformation) -> {
             try {
                 selectedPlotDifficulty = (selectedPlotDifficulty == null ?
                         PlotDifficulty.values()[0] : selectedPlotDifficulty.ordinal() != PlotDifficulty.values().length - 1 ?
                         PlotDifficulty.values()[selectedPlotDifficulty.ordinal() + 1] : null);
-                getMenu().getSlot(7).setItem(getSelectedDifficultyItem());
+                getMenu().getSlot(52).setItem(getSelectedDifficultyItem());
                 setCityProjectItems();
 
                 clickPlayer.playSound(clickPlayer.getLocation(), Utils.Done, 1, 1);
@@ -232,7 +233,7 @@ public class CompanionMenu extends AbstractMenu {
         }));
 
         // Add click event for player settings item
-        getMenu().getSlot(52).setClickHandler(((clickPlayer, clickInformation) -> clickPlayer.playSound(clickPlayer.getLocation(), Utils.ErrorSound, 1, 1)));
+        //getMenu().getSlot(52).setClickHandler(((clickPlayer, clickInformation) -> clickPlayer.playSound(clickPlayer.getLocation(), Utils.ErrorSound, 1, 1)));
     }
 
    public static ItemStack getMenuItem() {
@@ -248,17 +249,54 @@ public class CompanionMenu extends AbstractMenu {
             if(i <= 28) {
                 ItemStack cityProjectItem = MenuItems.errorItem();
                 switch (cityProjects.get(i).getCountry()) {
-                    case AT:
-                        cityProjectItem = Utils.getItemHead("4397");
+                    case BW:
+                        cityProjectItem = Utils.getItemHead("522");
                         break;
-                    case CH:
-                        cityProjectItem = Utils.getItemHead("32348");
+                    case BY:
+                        cityProjectItem = Utils.getItemHead("522");
                         break;
-                    case LI:
-                        cityProjectItem = Utils.getItemHead("26174");
+                    case BE:
+                        cityProjectItem = Utils.getItemHead("522");
                         break;
-                    case IT:
-                        cityProjectItem = Utils.getItemHead("21903");
+                    case BB:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case HB:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case HH:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case HE:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case MV:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case NI:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case NW:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case RP:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case SL:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case SN:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case ST:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case SH:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
+                    case TH:
+                        cityProjectItem = Utils.getItemHead("522");
+                        break;
                 }
 
                 try {

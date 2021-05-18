@@ -38,18 +38,15 @@ import github.BTEPlotSystem.core.DatabaseConnection;
 import github.BTEPlotSystem.core.EventListener;
 import github.BTEPlotSystem.core.holograms.*;
 import github.BTEPlotSystem.core.system.plot.PlotManager;
-import github.BTEPlotSystem.utils.PortalManager;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ipvp.canvas.MenuFunctionListener;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,6 +64,7 @@ public class BTEPlotSystem extends JavaPlugin {
     private File configFile;
 
     private final static List<HolographicDisplay> holograms = new ArrayList<>();
+
 
     @Override
     public void onEnable() {
@@ -86,9 +84,9 @@ public class BTEPlotSystem extends JavaPlugin {
         this.getCommand("spawn").setExecutor(new CMD_Spawn());
         this.getCommand("hub").setExecutor(new CMD_Spawn());
         this.getCommand("tpp").setExecutor(new CMD_Tpp());
-        this.getCommand("tpll").setExecutor(new CMD_Tpll());
+        this.getCommand("ptpll").setExecutor(new CMD_pTpll());
 
-        // Add plot commands [alpsbte.plot Permission]
+        // Add plot commands [btegermany.plot Permission]
         this.getCommand("companion").setExecutor(new CMD_Companion());
         this.getCommand("link").setExecutor(new CMD_Links());
         this.getCommand("submit").setExecutor(new CMD_Submit());
@@ -96,15 +94,15 @@ public class BTEPlotSystem extends JavaPlugin {
         this.getCommand("undosubmit").setExecutor(new CMD_UndoSubmit());
         this.getCommand("feedback").setExecutor(new CMD_Feedback());
         this.getCommand("plots").setExecutor(new CMD_Plots());
-        this.getCommand("tpll").setExecutor(new CMD_Tpll());
+        this.getCommand("ptpll").setExecutor(new CMD_pTpll());
 
-        // Add reviewer commands [alpsbte.review Permission]
+        // Add reviewer commands [btegermany.review Permission]
         this.getCommand("review").setExecutor(new CMD_Review());
         this.getCommand("undoreview").setExecutor(new CMD_UndoReview());
         this.getCommand("sendfeedback").setExecutor(new CMD_SendFeedback());
         this.getCommand("editplot").setExecutor(new CMD_EditPlot());
 
-        // Add admin commands [alpsbte.admin Permission]
+        // Add admin commands [btegermany.admin Permission]
         this.getCommand("plot").setExecutor(new CMD_Plot());
         this.getCommand("cleanplot").setExecutor(new CMD_CleanPlot());
         this.getCommand("deleteplot").setExecutor(new CMD_DeletePlot());
@@ -118,17 +116,13 @@ public class BTEPlotSystem extends JavaPlugin {
         // Set holograms
         holograms.addAll(Arrays.asList(
                 new ScoreLeaderboard(),
-                new ParkourLeaderboard(),
-                new EventHologram(),
                 new CompletedBuildsLeaderboard()
         ));
         holograms.forEach(Thread::start);
 
-        new PortalManager().start();
-
         PlotManager.checkPlotsForLastActivity();
 
-        getLogger().log(Level.INFO, "Successfully enabled AlpsBTE-PlotSystem plugin.");
+        getLogger().log(Level.INFO, "Successfully enabled BTEGermany-PlotSystem plugin.");
     }
 
     public static BTEPlotSystem getPlugin() {
@@ -142,11 +136,6 @@ public class BTEPlotSystem extends JavaPlugin {
 
     @Override
     public void reloadConfig() {
-        try{
-            leaderboardConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getPluginManager().getPlugin("LeakParkour").getDataFolder(), "history.yml"));
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
 
         configFile = new File(getDataFolder(), "config.yml");
         if (configFile.exists()) {
@@ -166,25 +155,6 @@ public class BTEPlotSystem extends JavaPlugin {
             reloadConfig();
         }
         return config;
-    }
-
-    public FileConfiguration getLeaderboardConfig() {
-        try{
-            leaderboardConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getPluginManager().getPlugin("LeakParkour").getDataFolder(), "history.yml"));
-        } catch (Exception ex){
-            Bukkit.getLogger().log(Level.SEVERE, "An error occurred while reading config file!", ex);
-        }
-        return leaderboardConfig;
-    }
-
-    public FileConfiguration getNavigatorConfig() {
-        try {
-            System.out.println(Bukkit.getPluginManager().getPlugin("AlpsBTE-Navigator").getDataFolder().getAbsolutePath());
-            navigatorConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getPluginManager().getPlugin("AlpsBTE-Navigator").getDataFolder(), "config.yml"));
-        } catch (Exception ex) {
-            Bukkit.getLogger().log(Level.SEVERE, "An error occurred while reading config file!", ex);
-        }
-        return navigatorConfig;
     }
 
     @Override
@@ -209,6 +179,27 @@ public class BTEPlotSystem extends JavaPlugin {
             player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
         } catch (Exception ex){
             getLogger().log(Level.WARNING, "Could not connect player [" + player + "] to " + server, ex);
+        }
+    }
+
+    private static BTEPlotSystem getInstance() {
+        return plugin;
+    }
+
+    public static void sendPlayerToServer(Player player, String server) {
+        System.out.println("send player " + player.getName() + " to " + server);
+        player.sendMessage("§b§lBTEG §8» §aSending to §6" + server);
+        try {
+            ByteArrayOutputStream b = new ByteArrayOutputStream();
+            DataOutputStream out = new DataOutputStream(b);
+            out.writeUTF("Connect");
+            out.writeUTF(server);
+            player.sendPluginMessage(BTEPlotSystem.getInstance(), "BungeeCord", b.toByteArray());
+            b.close();
+            out.close();
+        }
+        catch (Exception e) {
+            player.sendMessage(ChatColor.RED+"Error when trying to connect to "+server);
         }
     }
 }

@@ -25,5 +25,5 @@
 package github.BTEPlotSystem.utils.enums;
 
 public enum Country {
-    AT, CH, LI, IT
+    BW, BY, BE, BB, HB, HH, HE, MV, NI, NW, RP, SL, SN, ST, SH, TH
 }

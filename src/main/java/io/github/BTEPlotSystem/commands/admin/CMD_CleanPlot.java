@@ -54,7 +54,7 @@ public class CMD_CleanPlot implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.admin")) {
+            if(sender.hasPermission("btegermany.admin")) {
                 Player player = (Player)sender;
                 if(args.length == 1 && PlotManager.isPlotWorld(player.getWorld())) {
                     try {

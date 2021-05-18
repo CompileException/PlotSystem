@@ -40,7 +40,7 @@ public class CMD_Plot implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.admin")) {
+            if(sender.hasPermission("btegermany.admin")) {
                 if(args.length == 1 || args.length == 2) {
                     if(Utils.TryParseInt(args[0]) != null) {
                         int ID = Integer.parseInt(args[0]);

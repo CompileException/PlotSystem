@@ -42,7 +42,7 @@ public class CMD_Review implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (sender instanceof Player){
-            if (sender.hasPermission("alpsbte.review")){
+            if (sender.hasPermission("btegermany.review")){
                 try {
                     Player player = (Player) sender;
                     if(PlotManager.isPlotWorld(player.getWorld()) && PlotManager.getPlotByWorld(player.getWorld()).getStatus() == Status.unreviewed) {

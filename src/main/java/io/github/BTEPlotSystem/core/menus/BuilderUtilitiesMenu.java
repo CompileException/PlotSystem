@@ -89,7 +89,7 @@ public class BuilderUtilitiesMenu extends AbstractMenu {
         getMenu().getSlot(10).setClickHandler((clickPlayer, clickInformation) -> clickPlayer.performCommand("hdb"));
 
         // Set click event for banner maker
-        getMenu().getSlot(13).setClickHandler((clickPlayer, clickInformation) -> clickPlayer.performCommand("bm"));
+        getMenu().getSlot(13).setClickHandler((clickPlayer, clickInformation) -> clickPlayer.performCommand("bannermenu"));
 
         // Set click event for special blocks
         getMenu().getSlot(16).setClickHandler((clickPlayer, clickInformation) -> new SpecialBlocksMenu(clickPlayer));

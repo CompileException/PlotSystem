@@ -40,7 +40,7 @@ public class CMD_DeletePlot implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if(sender instanceof Player) {
-            if(sender.hasPermission("alpsbte.admin")) {
+            if(sender.hasPermission("btegermany.admin")) {
                 if(args.length == 1 && Utils.TryParseInt(args[0]) != null) {
                     int plotID = Integer.parseInt(args[0]);
                     if(PlotManager.plotExists(plotID)) {
