@@ -10,20 +10,20 @@
 <br />
 
 <p align="center">
-  <a href="https://github.com/AlpsBTE/AlpsBTE-PlotSystem">
-    <img src="https://cdn.discordapp.com/attachments/697504468299808819/762357721676644412/server_icon_transparent_bloom.png" alt="Logo" width="200" height="120">
+  <a href="https://github.com/Build-the-Earth-Germany/BTEGermany-Plotsystem">
+    <img src="https://raw.githubusercontent.com/Build-the-Earth-Germany/BTE-Germany/master/image.png?token=AKNSPVB434J4LHSZZ4J7O4DAR3XHC" alt="Logo">
   </a>
 </p>
 
-  <h3 align="center">Alps BTE - Plot System</h3>
+  <h3 align="center">BTE Germany - Plot System</h3>
 
   <p align="center">
-    An easy to use building system for the Alps BTE server
+    An easy to use building system for the BTE Germany server (forked from Alps BTE)
     <br />
     <a href="https://github.com/AlpsBTE/AlpsBTE-PlotSystem/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="mc.alps-bte.com">Check Out Now</a>
+    <a href="alps-bte.com">Check Out Alps BTE Now</a>
     ·
     <a href="https://github.com/AlpsBTE/AlpsBTE-PlotSystem/wiki">Report Bug</a>
     ·
@@ -38,13 +38,13 @@
 
 ![PlotSystemTrailer](https://user-images.githubusercontent.com/64250550/113524662-7c78b400-95b0-11eb-98dd-753600fb6f17.gif)
 
-The Plot System is an essential part of the Alps BTE server system, along with the Terra and Event Server. The plot system gives every player the opportunity to participate in the project with Minecraft versions 1.12-1.16 (Vanilla).
+The Plot System is an essential part of the BTE Germany server system. The plot system gives every player the opportunity to participate in the project with Minecraft versions 1.12-1.16 (Vanilla).
 
-After jumping into the "Create Plot Portal", a selection window appears where you can choose a city from the list. If you now click on one of these cities, you will get to a random plot of this city and you can immediately start building. Links to Google Maps, Google Earth Web & OpenStreetMap appear when you enter the plot and allow you to quickly find your way around.
+After creating a Plot on the Plotserver, a selection window appears where you can choose a city from the list. If you now click on one of these cities, you will get to a random plot of this city and you can immediately start building. Links to Google Maps, Google Earth Web & OpenStreetMap appear when you enter the plot and allow you to quickly find your way around.
 
 The system is designed to make it easier for unexperienced people, casual players and applicants to start building in BTE and to massively shorten application times.  
 
-The plugin was programmed for the Alps BTE server, but it can be further developed or adapted by other build teams / persons.
+The plugin was programmed for the Alps BTE server and customized to work on the BTE Germany Server, but it can be further developed or adapted by other build teams / persons.
 
 All used Library and APIs are listed below.
 
@@ -79,6 +79,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - R3tuxn - [R3tuxn#7169](https://discord.com/invite/vgkspay)
 - Cinnazeyy - [Cinnazeyy#2440](https://discord.com/invite/vgkspay)
+- FFA2016 - [FFA2016#1548](https://discord.gg/8j2eB8hvxX)
 
 Project Link: [https://github.com/AlpsBTE/AlpsBTE-PlotSystem](https://github.com/AlpsBTE/AlpsBTE-PlotSystem)
 
