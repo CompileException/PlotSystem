@@ -87,7 +87,7 @@ public class CompanionMenu extends AbstractMenu {
         // Set navigator item
         getMenu().getSlot(4)
                 .setItem(new ItemBuilder(Material.COMPASS, 1)
-                        .setName("§6§Lobby").setLore(new LoreBuilder()
+                        .setName("§6§lLobby").setLore(new LoreBuilder()
                                 .addLine("Go to the lobby").build())
                         .build());
 

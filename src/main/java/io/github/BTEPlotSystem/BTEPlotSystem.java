@@ -108,7 +108,7 @@ public class BTEPlotSystem extends JavaPlugin {
         this.getCommand("deleteplot").setExecutor(new CMD_DeletePlot());
         this.getCommand("generateplot").setExecutor(new CMD_GeneratePlot());
         this.getCommand("sethologram").setExecutor(new CMD_SetHologram());
-        this.getCommand("preload").setExecutor(new CMD_PReload());
+        this.getCommand("plotreload").setExecutor(new CMD_PReload());
 
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
