@@ -46,11 +46,7 @@ public class CMD_Plot implements CommandExecutor {
                         int ID = Integer.parseInt(args[0]);
                         if(PlotManager.plotExists(ID)) {
                             try {
-                                if(args.length == 2 && args[1].equalsIgnoreCase("delete")) {
-                                    PlotHandler.deletePlot(new Plot(ID));
-                                } else {
-                                    PlotHandler.teleportPlayer(new Plot(ID), (Player) sender);
-                                }
+                                PlotHandler.teleportPlayer(new Plot(ID), (Player) sender);
                             } catch (Exception ex) {
                                 sender.sendMessage(Utils.getErrorMessageFormat("An error occurred! Please try again!"));
                                 Bukkit.getLogger().log(Level.SEVERE, "A SQL error occurred!", ex);
